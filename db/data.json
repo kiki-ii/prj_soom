@@ -1,9 +1,0 @@
-{
-  "posts": [
-    { "id": 1, "title": "Vite 프로젝트 시작", "author": "user1", "completed": true },
-    { "id": 2, "title": "React 기초", "author": "user2", "completed": false}
-  ],
-  "users": [
-    { "id": 1, "name": "user1", "email": "user1@test.com", "completed": true }
-  ]
-}

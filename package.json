@@ -4,11 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "concurrently \"npm run dev\" \"npm run json-server\"",
     "dev": "vite",
-    "json-server": "json-server --watch ./db/data.json --port 3001",
     "build": "vite build",
-    "predeploy": "npm run build && cp ./db/data.json ./dist/db/data.json",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "test:deploy": "serve -s dist"
   },

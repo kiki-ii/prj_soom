@@ -1,25 +1,25 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios';
+import data from './db/data.json'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+
 import './App.css'
 
 function App() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    const apiUrl = import.meta.env.PROD 
-    ? './db/data.json'  // 프로덕션: 정적 파일
-      : 'http://localhost:3001/posts';  // 개발: JSON Server
-    
-    axios.get(apiUrl)
+    // const apiUrl = import.meta.env.PROD 
+    // ? process.env.PUBLIC_URL + '/db/data.json'  // './db/data.json'  - 프로덕션: 정적 파일
+    //   : 'http://localhost:3001/posts';  // 개발: JSON Server
+    axios.get(data)
       .then(response => {
         setPosts(response.data);
       })
       .catch(error => {
         console.error('Error fetching data:', error);
         // Fallback 데이터 로드 (옵션) : API 실패 시 로컬 JSON 파일 자동 로드
-        import('../db/data.json').then(data => setPosts(data.default));
       });
     
   }, []);
@@ -37,7 +37,7 @@ function App() {
       <h1>Vite + React + Dummy DB</h1>
       
       <ul>
-        {posts.map(post => (
+        {data.posts.map(post => (
           <li key={post.id}>
             {post.title} - by {post.author}
           </li>
