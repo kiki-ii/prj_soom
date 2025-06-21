@@ -8,13 +8,18 @@ function App() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    // JSON Server에서 데이터 가져오기
-    axios.get('http://localhost:3001/posts')
+    const apiUrl = import.meta.env.PROD 
+    ? './db/data.json'  // 프로덕션: 정적 파일
+      : 'http://localhost:3001/posts';  // 개발: JSON Server
+    
+    axios.get(apiUrl)
       .then(response => {
         setPosts(response.data);
       })
       .catch(error => {
         console.error('Error fetching data:', error);
+        // Fallback 데이터 로드 (옵션) : API 실패 시 로컬 JSON 파일 자동 로드
+        import('../db/data.json').then(data => setPosts(data.default));
       });
     
   }, []);

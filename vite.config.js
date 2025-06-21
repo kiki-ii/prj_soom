@@ -5,14 +5,8 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/prj_soom/', 
-  // server: {
-  //   proxy: {
-  //     // '/api': 'http://localhost:3001'  // /api/posts → 3001/posts로 연결
-  //     '/api': {
-  //       target: 'http://localhost:3001',
-  //       changeOrigin: true,
-  //       rewrite: (path) => path.replace(/^\/api/, ''),
-  //     },
-  //   }
-  // }
+  build: {
+    outDir: 'dist' // 출력 폴더 명시적 지정
+  }
+  
 })
