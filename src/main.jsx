@@ -1,10 +1,17 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
+import * as React from 'react'
+import * as ReactDOM from 'react-dom/client'
+import { HashRouter  } from 'react-router-dom'
+import { Provider } from "./components/ui/provider"
+
+
 import App from './App.jsx'
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <HashRouter >
+      <Provider>
+        <App />        
+      </Provider>
+    </HashRouter>
+  </React.StrictMode>
+);
