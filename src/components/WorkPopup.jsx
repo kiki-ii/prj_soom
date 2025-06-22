@@ -28,7 +28,7 @@ export const WorkPopup = ({work }) => {
               <Dialog.Title>With Outside Scroll</Dialog.Title>
             </Dialog.Header> */}
             <Dialog.CloseTrigger asChild>
-              <CloseButton size='xl' className='btn_dialog_close' />
+              <CloseButton size={{base:'md', lg: 'xl'}} className='btn_dialog_close' />
             </Dialog.CloseTrigger>
             <Dialog.Body>
               <Box onContextMenu={(e)=> e.preventDefault()} onDragStart={(e)=>e.preventDefault()} display='flex' alignItems='center' flexDirection='column'>
