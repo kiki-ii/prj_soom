@@ -13,7 +13,7 @@ export const SideMenu = () => {
   
   const isHome = currentPath === '/';
 
-  const sideclose = e => {
+  function sideclose(e) {
     e.addEventListener('click', setOpen(false));
   };
   
@@ -36,10 +36,9 @@ export const SideMenu = () => {
               </Drawer.CloseTrigger>
               <Drawer.Body padding={'0'}>
                 <VStack className='sidemenu'>
-                  
+                  {!isHome && <Link to='/' onClick={sideclose}>Home</Link>}
                   {isHome ? 
                     <>
-                    <Link to='/' onClick={sideclose}>Home</Link>
                     <Link to='/work' onClick={sideclose}>Portfolio</Link>
                     <AnchorLink href='#skills' onClick={sideclose}>Skills</AnchorLink>
                     <AnchorLink href='#services' onClick={sideclose}>Services</AnchorLink>
@@ -47,7 +46,6 @@ export const SideMenu = () => {
                     </>
                     : 
                     <>
-                      <Link to='/' onClick={sideclose}>Home</Link>
                     <Link to='/work' onClick={sideclose}>Portfolio</Link>
                     <Link to='/#skills' onClick={sideclose}>Skills</Link>
                     <Link to='/#services' onClick={sideclose}>Services</Link>

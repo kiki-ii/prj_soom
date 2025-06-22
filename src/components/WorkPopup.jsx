@@ -11,7 +11,7 @@ export const WorkPopup = ({work }) => {
 
   return (
     <Dialog.Root
-      size='xl'
+      size='full'
       motionPreset='slide-in-bottom'
       scrollBehavior='outside'
       open={open}
@@ -28,12 +28,12 @@ export const WorkPopup = ({work }) => {
               <Dialog.Title>With Outside Scroll</Dialog.Title>
             </Dialog.Header> */}
             <Dialog.CloseTrigger asChild>
-              <CloseButton size='lg' />
+              <CloseButton size='xl' className='btn_dialog_close' />
             </Dialog.CloseTrigger>
             <Dialog.Body>
-              <Box>
-                {work.image.map(img => (
-                  <Image src={getImageUrl(img)} key={img.inex} />
+              <Box onContextMenu={(e)=> e.preventDefault()} onDragStart={(e)=>e.preventDefault()} display='flex' alignItems='center' flexDirection='column'>
+                {work.image.map((img, index) => (
+                  <Image src={getImageUrl(img)} key={index} />
                 ))}
               </Box>
             </Dialog.Body>

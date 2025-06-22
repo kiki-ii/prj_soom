@@ -7,14 +7,16 @@ import { Footer } from '../components/Footer';
 import gsap from 'gsap';
 import { SplitText } from "gsap/SplitText";
 
+gsap.registerPlugin(SplitText);
+
 export const WorkPage = () => {
-    const { fetchWorks } = useWorkStore();
-const products = product;
+  const { fetchWorks } = useWorkStore();
+  const products = product;
   const paddingX = { base: '1.5rem', md: ' 3rem', lg: '4rem', xl: '10rem' };
-  const marginL = { base: '-1.5rem', md: ' -3rem', lg: '-4rem', xl: '-10rem' };
+  // const marginL = { base: '-1.5rem', md: ' -3rem', lg: '-4rem', xl: '-10rem' };
   
     useEffect(() => {
-      fetchWorks();        
+      fetchWorks();    
       
     }, [fetchWorks,]);
   
@@ -41,7 +43,7 @@ const products = product;
     <Box className='workpage container'  w={'100%'} display={'flex'} flexDir={'column'}  overflow={'hidden'}> 
       {/* PORTFOLIO */}
       <Box id='work' className='section portfolio_box' paddingX={paddingX}  >
-        <VStack className='portfolio_title' alignItems={'start'} marginLeft={marginL}>          
+        <VStack className='portfolio_title' alignItems={'start'} >          
           <Heading className='title_h2' fontSize={{base:'3.5rem', md:'6rem', lg:'7rem', xl:'9.5rem'}} >PORTFOLIO</Heading>
         </VStack>
         <Grid h={{ base: 'auto', }} 

@@ -2,7 +2,7 @@
 import { Accordion, Box, Button, Grid, GridItem, Heading, HStack, Image, Span, Text, VStack } from '@chakra-ui/react';
 import {ServiceCard} from '../components/ServiceCard';
 // import {useDragScroll} from '../hooks/useDragScroll.js';
-import product from '../store/portfolio.js';
+import { useNavigate } from 'react-router-dom';
 
 import { useWorkStore } from '../store/work';
 import { useServiceStore } from '../store/service';
@@ -23,15 +23,14 @@ gsap.registerPlugin(SplitText, ScrollTrigger);
 export const HomePage = () => {
 
   const {fetchServices, services } = useServiceStore();
-  const { fetchWorks } = useWorkStore();
-  const products = product;
-  
+  const { fetchWorks, works } = useWorkStore();
+  const navigate = useNavigate();
   // const workRef = useRef();
   const containerRef = useRef(null);
   const sections = useRef([]);
   
   const paddingX = { base: '1.5rem', md: ' 3rem', lg: '4rem', xl: '10rem' };
-  const marginL = { base: '-1.5rem', md: ' -3rem', lg: '-4rem', xl: '-10rem' };
+  // const marginL = { base: '-1.5rem', md: ' -3rem', lg: '-4rem', xl: '-10rem' };
 
   
   useEffect(() => {
@@ -86,9 +85,10 @@ export const HomePage = () => {
   };
   
   return (
-    <Box className='container'  w={'100%'} display={'flex'} flexDir={'column'} ref={containerRef} overflow={'hidden'}> 
+    <Box id='top' className='container' w={'100%'} display={'flex'} flexDir={'column'} ref={containerRef} overflow={'hidden'}> 
+      
       {/* HERO section */}
-      <Box ref={addToRefs} className='hero' w={'100%'} h={'100vh'} padding={{ base: '0rem 1.5rem', xl:'1.75rem 10rem', lg: '1rem 6rem', md: '0rem 3rem'}} borderBottom={'1px solid #d8d8d8'}>
+      <Box ref={addToRefs} className='hero' w={'100%'} h={'100vh'} padding={{ base: '0rem 1.5rem', xl:'1.75rem 5rem', lg: '1rem 3rem', md: '0rem 3rem'}} borderBottom={'1px solid #d8d8d8'}>
         <Box className='hero_text' zIndex={'1'} >
           <Text className='name' fontSize={{base:'xl', md:'2xl', lg:'3xl', xl:'3xl'}} >
             Lee soo min
@@ -115,14 +115,14 @@ export const HomePage = () => {
           gap={6}
           className='grid_work'
         >         
-          {products.slice(0, 4).map((product, index) => (
+          {works.slice(0, 4).map((work, index) => (
             <GridItem className='workcard' key={index}  >
-              <WorkPopup key={index}  work={product} />            
+              <WorkPopup key={index}  work={work} />            
           </GridItem>
           ))}     
         </Grid>
         <Box display='flex' justifyContent='center' marginTop={{base:'5', md:'8',lg:'10' }}>
-          <Button asChild className='btn_all' size={{base:'lg', md:'2xl' }} rounded='full' variant='ghost' ><a href='/work'>See all</a></Button>
+          <Button className='btn_all' size={{base:'lg', md:'2xl' }} rounded='full' variant='ghost'  onClick={()=>navigate('/work')}>See all</Button>
         </Box>
       </Box>
 
@@ -272,9 +272,7 @@ export const HomePage = () => {
         </Box>
       </Box>
       
-      
       <Footer />
-      
     </Box>
   );
 };

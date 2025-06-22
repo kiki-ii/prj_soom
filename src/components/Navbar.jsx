@@ -1,7 +1,7 @@
 import { Box,  HStack,} from '@chakra-ui/react'
 import { useEffect, useState } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import { TfiLock, TfiUnlock, TfiPlus, TfiArrowUp } from 'react-icons/tfi';
+import { TfiArrowUp } from 'react-icons/tfi';
 import {  useLocation } from 'react-router-dom';
 
 import { HashLink as Link } from 'react-router-hash-link';
@@ -10,10 +10,10 @@ import { SideMenu } from './SideMenu';
 export const Navbar = () => {
   const [showBtn, setShowBtn] = useState(false);
   // const topButton = document.querySelector('.btn_top');
-  const location = useLocation();
-  const currentPath = location.pathname;
+  const { pathname } = useLocation();  
+  const isHome = pathname === '/';
   
-  const isHome = currentPath === '/';
+
   
   useEffect(() => {
     const showBtn = () => {
@@ -31,7 +31,7 @@ export const Navbar = () => {
   
   
   return (
-    <Box id='top' className='gnb' padding={{ base: '1rem 1rem', xl:'1.75rem 10rem', lg: '1rem 6rem', md: '1rem 3rem'}}>
+    <Box id='top' className='gnb' padding={{ base: '1rem 1rem', md: '1rem 3rem', lg: '1rem 3rem', xl:'1.75rem 5rem' }}>
       <Box w={'full'} display={'flex'} justifyContent={'space-between'} alignItems={'center'}>
         <Link to='/'>
           <Box className='logo ' w={{base: '48px', lg: '60px'}} h={{base: '48px', lg: '60px'}} ><p className='blind'>Soom Logo</p>  
@@ -40,10 +40,14 @@ export const Navbar = () => {
         </Link>
         
         <HStack className='nav_item' gap='16' display={{ base: 'none', lg: 'flex' }}>
-          {/* <Link to='/work' >Portfolio</Link>
-          <Link to='/#skills' >Skills</Link>
-          <Link to='/#services' >Services</Link>
-          <Link to='/#about' >About</Link> */}
+          {!isHome && <Link to='/'>Home</Link>}
+          {/* {menuItem.map((item) => (
+            item.path.startsWith('#') ? (
+              <AnchorLink href={isHome ? item.path : `/${item.path}`} key={item.name}>{item.name}</AnchorLink>
+              ) : (
+                  <Link to={item.path} key={item.name}>{item.name}</Link>
+              )
+          ))} */}
           {isHome ?
             <>
               <Link to='/work' >Portfolio</Link>
@@ -53,31 +57,21 @@ export const Navbar = () => {
             </>
             :
             <>
-              <Link to='/' >Home</Link>
-              <Link to='/work' >Portfolio</Link>
+              <Link to='' >Portfolio</Link>
               <Link to='/#skills' >Skills</Link>
               <Link to='/#services' >Services</Link>
               <Link to='/#about' >About</Link>
             </>
-          }
-
+          }        
           
-          {/* <Icon  size="lg" >
-            <TfiLock />
-          </Icon>
-          <Link to='/create'>          
-            <Icon size='lg'>
-              <TfiPlus />
-            </Icon>
-          </Link> */}
         </HStack>
         <SideMenu />
         
       </Box>
       
-      <a href='#top' animation="bounce" className={showBtn ? 'btn_top show' : 'btn_top'} >
+      <AnchorLink href='#top' animation="bounce" className={showBtn ? 'btn_top show' : 'btn_top'} >
         <TfiArrowUp />
-      </a>
+      </AnchorLink>
       
     </Box>
   )
