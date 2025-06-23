@@ -42,9 +42,7 @@ body {  position: relative; font-family: "Pretendard", sans-serif; scroll-behavi
 .container {position: relative; z-index: 0; }
 .container::after {content: ''; position: absolute;  background:url(../src/assets/images/bg_main_02.png) no-repeat; background-size: cover; z-index: -1; }
 .container::before {content: ''; position: absolute;  background:url(../src/assets/images/bg_main_03.png) no-repeat; background-size: cover; z-index: -1; }
-/* .container::after {content: ''; position: absolute; right: 0; width: 732px; height:702px; background:url(../src/assets/images/bg_main_02.png) no-repeat; z-index: -1; background-position-x: 1200px; background-position-y: 2800px;} 
-.container::before {content: ''; position: absolute; left: 0; width: 100%; height:100%; background:url(../src/assets/images/bg_main_03.png) no-repeat; z-index: -1; background-position-x: -400px; background-position-y: 4000px;}
-*/
+
 .gnb {  position: absolute;  left: 0;  top: 0;  z-index: 99;  width: 100%;  padding:var(--box-padding); color: var(--primary); }
 .gnb .logo { background: url(./assets/images/logo_soom.svg) 0 0 no-repeat ; background-size: contain;}
 .blind {position: absolute; clip: rect(0 0 0 0); width: 1px; height: 1px; margin: -1px; overflow: hidden;}
@@ -128,9 +126,7 @@ body {  position: relative; font-family: "Pretendard", sans-serif; scroll-behavi
 .workcard .badge {padding: 0.5rem 1rem; font-size: 1rem; line-height: 100%; border: 1px solid #fff; border-radius: 1rem; }
 .btn_all {color: var(--primary); border-color: var(--primary) !important; }
 .btn_all:hover, .btn_all:focus {background-color: rgba(var(--primary_rgb),0.12);}
-/* .btn_dialog_close {position: fixed; z-index: 1; right: 2rem;} */
 .btn_dialog_close svg {width: 100%; height: 100%;}
-/* .btn_dialog_close:hover {background-color: inherit} */
 
 /*=== SKILLS ===*/
 .skills_box { width: 100%;  display: flex; justify-content: center; flex-direction: column; position: relative; z-index: 0; overflow:visible;}
@@ -149,7 +145,7 @@ body {  position: relative; font-family: "Pretendard", sans-serif; scroll-behavi
 
 /*=== SERVICES ===*/
 .services_box { position: relative;   z-index: 0; }
-.service {  padding-bottom: 1rem; gap: 1.25rem; width: 100%; }
+.service {  padding-bottom: 1rem; width: 100%; }
 .servicecard  { background-color: rgba(247,241,215,0.75); padding: 36px 0 20px 0 ;  display: flex; align-items: center ; justify-content: center; box-sizing: border-box; width: 100%; height: 100%;  backdrop-filter: blur(16px); border: none;} /*box-shadow: 0 4px 16px rgba(var(--primary_rgb),0.06); */
 .servicecard img {width: 60px;}
 .servicecard h3 { font-size: 1.125rem; text-align: center; color: var(--primary);}
@@ -169,8 +165,7 @@ body {  position: relative; font-family: "Pretendard", sans-serif; scroll-behavi
 
 
 /*=== ABOUT ===*/
-/* .about_box {padding:var(--box-padding); margin-top: var(--box-margin-top);justify-content: space-between; align-items: start; gap: 100px; } */
-.about_box .about_p{font-size: 1rem; color: var(--primary);}
+.about_box .about_p{ color: var(--primary);}
 
 
 
@@ -215,27 +210,8 @@ body {  position: relative; font-family: "Pretendard", sans-serif; scroll-behavi
 .footer .circle_box div {transform-origin: center; animation: rotateText 15s linear infinite; }
 .footer .circle_box .circle_text {position: absolute; left: 50%; top: 50%; transform-origin: center; font-size: 0.875rem;text-transform: uppercase;}
 
-/* 
-
- */
-
-/* .footer .circle {position: relative;
-	width: var(--d-outer);
-	height: var(--d-outer);
-	border-radius: 50%;
-	display: flex;
-	justify-content: center;
-	align-items: center;}
-.footer .circle .text {position: absolute;	width: 100%;	height: 100%; animation: rotateText 15s linear infinite; text-transform: uppercase;}
-.footer .circle .text p {font-size: var(--font-size);} */
-
 .footer .txt_big {font-family: var(--font-mont); font-size: calc(1rem + 7dvw); line-height: 80%; font-weight: 700; letter-spacing: -2px;}
-/* .footer .circle .text p span {
-	position: absolute;
-	left: 50%;
-	font-size: 1rem;
-	transform-origin: 0 var(--radius);
-} */
+
 
 @keyframes rotateText {
 	0% {
@@ -308,7 +284,7 @@ body {  position: relative; font-family: "Pretendard", sans-serif; scroll-behavi
 
 @media (orientation: landscape) and (max-width: 992px) {
     .hero { background: url(../src/assets/images/bg_main_01.png) right top no-repeat; background-size: 70%; z-index: 1;}
-
+    .btn_top {bottom: -20%;}
     .hero_text .hero_title { font-size: 10dvw; text-wrap:wrap; }
     .sidemenu {font-size: 2rem;}
 }
@@ -326,7 +302,7 @@ body {  position: relative; font-family: "Pretendard", sans-serif; scroll-behavi
   .workcard h3 {font-size: 1.75rem; }
 
   .catchphrase::after {display: block;}
-  .about_box .about_p {font-size: 1.125rem;}
+  /* .about_box .about_p {font-size: 1.1875rem;} */
   
   .grid_work .workcard:nth-child(1) {grid-column: 1 / 8;  grid-row: 1 ;}
   .grid_work .workcard:nth-child(2) {grid-column: 8 / 13;  grid-row: 1;}

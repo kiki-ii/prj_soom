@@ -50,7 +50,7 @@ export const WorkPage = () => {
           // marginTop={{base:'10rem'}}
           templateRows={{base:'repeat(4, 1fr)',md:'repeat(2, 1fr)' , }}
           templateColumns={{base:'repeat(1, 1fr)' ,md:'repeat(2, 1fr)', lg:'repeat(3, 1fr)' }}
-          gap={6}
+          gap={{base:'2', md:'3'}}
           className='grid_portfolio'
         >         
           {products.map((product, index) => (

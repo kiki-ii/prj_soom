@@ -112,8 +112,7 @@ export const HomePage = () => {
         <Grid h={{base:'auto', xl: '1100px'}} 
           templateRows={{base:'repeat(4, 1fr)',md:'repeat(2, 1fr)' , }}
           templateColumns={{base:'repeat(1, 1fr)' ,md:'repeat(2, 1fr)', lg:'repeat(12, 1fr)' }}
-          gap={6}
-          className='grid_work'
+          gap={{base:'2', md:'3'}} className='grid_work'
         >         
           {works.slice(0, 4).map((work, index) => (
             <GridItem className='workcard' key={index}  >
@@ -133,7 +132,7 @@ export const HomePage = () => {
           <Heading >What I Work With</Heading>
         </VStack>
         
-        <Grid templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }} gap={6}>
+        <Grid templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }} gap={1}>
           <Box  className='skills_cat_box'>
             <h4>Development</h4>
             <Grid templateColumns={'repeat(2, 1fr)'} gap={'3'}>
@@ -211,7 +210,7 @@ export const HomePage = () => {
           <Text>SERVICES</Text>
           <Heading >What I Offer</Heading>
         </VStack>
-        <Grid className='service' templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg:'repeat(3, 1fr)', xl:'repeat(4, 1fr)'}} gridAutoFlow={'dense'} >
+        <Grid className='service' templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg:'repeat(3, 1fr)', xl:'repeat(4, 1fr)'}} gridAutoFlow={'dense'} gap={{base:'2', md:'3'}}>
           {services.map(service => (
             <ServiceCard key={service._id} service={service} />
           ))}
@@ -232,7 +231,7 @@ export const HomePage = () => {
             <Text>ABOUT ME</Text>
             <Heading lineHeight={'125% !important'} >Less Design, <br />More Meaning</Heading>
           </VStack>
-          <Text width={{base:'auto', lg: '55%'}} paddingTop={{base:'2rem', lg:'0'}} fontSize={{base: '1.125rem', lg:'1.375rem'}} className='about_p'>
+          <Text width={{base:'auto', lg: '55%'}} paddingTop={{base:'2rem', lg:'0'}} fontSize={{base: '1.125rem', xl:'1.375rem'}} className='about_p'>
             안녕하세요. 디자인과 퍼블리싱에 대한 10년 이상의 경력을 가진 UI/UX
             디자이너 이수민입니다.
             <br />
