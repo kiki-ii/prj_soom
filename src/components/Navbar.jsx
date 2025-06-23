@@ -69,7 +69,7 @@ export const Navbar = () => {
         
       </Box>
       
-      <AnchorLink href='#top' animation="bounce" className={showBtn ? 'btn_top show' : 'btn_top'} >
+      <AnchorLink href='#top' animation="bounce" className={showBtn ? 'btn_top show' : 'btn_top'} ><span className='blind'>Top 이동</span>
         <TfiArrowUp />
       </AnchorLink>
       

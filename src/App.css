@@ -288,7 +288,8 @@ body {  position: relative; font-family: "Pretendard", sans-serif; scroll-behavi
 
 @media (orientation: landscape) and (max-width: 992px) {
     .hero { background: url(../src/assets/images/bg_main_01.png) right top no-repeat; background-size: 70%; z-index: 1;}
-    .btn_top {bottom: -20%;}
+    .btn_top {bottom: -20%; }
+
     .hero_text .hero_title { font-size: 10dvw; text-wrap:wrap; }
     .sidemenu {font-size: 2rem;}
 }
