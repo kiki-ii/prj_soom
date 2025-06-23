@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { useWorkStore } from '../store/work';
 import { useServiceStore } from '../store/service';
-import { useEffect,  useRef } from 'react';
+import { useEffect,  useRef, useState } from 'react';
 import { WorkPopup } from '../components/WorkPopup.jsx';
 import { Bg } from '../components/Bg.jsx';
 
@@ -32,10 +32,22 @@ export const HomePage = () => {
   const paddingX = { base: '1.5rem', md: ' 3rem', lg: '4rem', xl: '10rem' };
   // const marginL = { base: '-1.5rem', md: ' -3rem', lg: '-4rem', xl: '-10rem' };
   
+  const [windowHeight, setWindowHeight] = useState('100vh');
+
+useEffect(() => {
+  
+}, []);
   
   useEffect(() => {
     fetchWorks();
     fetchServices();    
+    
+    const handleResize = () => {
+    setWindowHeight(`${window.innerHeight}px`);
+    };
+    window.addEventListener('resize', handleResize);
+    handleResize(); // 초기 실행
+    return () => window.removeEventListener('resize', handleResize);
     
   }, [fetchWorks, fetchServices ]);
     
@@ -88,7 +100,7 @@ export const HomePage = () => {
     <Box id='top' className='container' display={'flex'} flexDir={'column'} ref={containerRef} overflow={'hidden'}> 
       
       {/* HERO section */}
-      <Box ref={addToRefs} className='hero' padding={{ base: '0rem 1.5rem', xl:'1.75rem 5rem', lg: '1rem 3rem', md: '0rem 3rem'}}>
+      <Box ref={addToRefs} className='hero' height={windowHeight} padding={{ base: '0rem 1.5rem', xl:'1.75rem 5rem', lg: '1rem 3rem', md: '0rem 3rem'}}>
         <Box className='hero_text' zIndex={'1'} >
           <Text className='name' fontSize={{base:'xl', md:'2xl', lg:'3xl', xl:'3xl'}} >
             Lee soo min
@@ -231,7 +243,7 @@ export const HomePage = () => {
             <Text>ABOUT ME</Text>
             <Heading lineHeight={'125% !important'} >Less Design, <br />More Meaning</Heading>
           </VStack>
-          <Text width={{base:'auto', lg: '55%'}} paddingTop={{base:'2rem', lg:'0'}} fontSize={{base: '1rem',lg:'1.125rem', xl:'1.375rem'}} className='about_p'>
+          <Text width={{base:'auto', lg: '55%'}} paddingTop={{base:'2rem', lg:'0'}} fontSize={{base: '1rem', xl:'1.375rem'}} className='about_p'>
             안녕하세요. 디자인과 퍼블리싱에 대한 10년 이상의 경력을 가진 UI/UX
             디자이너 이수민입니다.
             <br />
