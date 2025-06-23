@@ -85,10 +85,10 @@ export const HomePage = () => {
   };
   
   return (
-    <Box id='top' className='container' w={'100%'} display={'flex'} flexDir={'column'} ref={containerRef} overflow={'hidden'}> 
+    <Box id='top' className='container' display={'flex'} flexDir={'column'} ref={containerRef} overflow={'hidden'}> 
       
       {/* HERO section */}
-      <Box ref={addToRefs} className='hero' w={'100%'} h={'100vh'} padding={{ base: '0rem 1.5rem', xl:'1.75rem 5rem', lg: '1rem 3rem', md: '0rem 3rem'}} borderBottom={'1px solid #d8d8d8'}>
+      <Box ref={addToRefs} className='hero' padding={{ base: '0rem 1.5rem', xl:'1.75rem 5rem', lg: '1rem 3rem', md: '0rem 3rem'}}>
         <Box className='hero_text' zIndex={'1'} >
           <Text className='name' fontSize={{base:'xl', md:'2xl', lg:'3xl', xl:'3xl'}} >
             Lee soo min
@@ -219,7 +219,7 @@ export const HomePage = () => {
       
       
       {/* TAGS */}
-      <Box id='tags' className='section tags_box' ref={addToRefs} paddingX={paddingX}  display={{base:'none', xl:'flex'}} marginTop={{base:'5rem', md:'6rem', lg:'7rem', xl:'12rem'}}>
+      <Box id='tags' className='section tags_box' ref={addToRefs} paddingX={paddingX}  display={{base:'none', xl:'flex'}} >
         <Tags />
       </Box>
       
