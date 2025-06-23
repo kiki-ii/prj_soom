@@ -231,7 +231,7 @@ export const HomePage = () => {
             <Text>ABOUT ME</Text>
             <Heading lineHeight={'125% !important'} >Less Design, <br />More Meaning</Heading>
           </VStack>
-          <Text width={{base:'auto', lg: '55%'}} paddingTop={{base:'2rem', lg:'0'}} fontSize={{base: '1.125rem', xl:'1.375rem'}} className='about_p'>
+          <Text width={{base:'auto', lg: '55%'}} paddingTop={{base:'2rem', lg:'0'}} fontSize={{base: '1rem',lg:'1.125rem', xl:'1.375rem'}} className='about_p'>
             안녕하세요. 디자인과 퍼블리싱에 대한 10년 이상의 경력을 가진 UI/UX
             디자이너 이수민입니다.
             <br />
