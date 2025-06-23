@@ -44,7 +44,7 @@ export const WorkPage = () => {
       {/* PORTFOLIO */}
       <Box id='work' className='section portfolio_box' paddingX={paddingX}  >
         <VStack className='portfolio_title' alignItems={'start'} >          
-          <Heading className='title_h2' fontSize={{base:'3.5rem', md:'6rem', lg:'7rem', xl:'9.5rem'}} >PORTFOLIO</Heading>
+          <Heading className='title_h2' fontSize={{base:'3rem',_landscape:'5rem', md:'6rem', lg:'7rem', xl:'9.5rem'}} >PORTFOLIO</Heading>
         </VStack>
         <Grid h={{ base: 'auto', }} 
           // marginTop={{base:'10rem'}}

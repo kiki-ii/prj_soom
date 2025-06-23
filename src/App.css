@@ -65,9 +65,9 @@ body {  position: relative; font-family: "Pretendard", sans-serif; scroll-behavi
 
 
 /*=== HERO ===*/
-.hero { position: relative; display: flex; padding: var(--box-padding); background: url(../src/assets/images/bg_main_01.png) no-repeat; background-size: 200%; background-position-x: left; color: var(--primary); height: 100vh !important; z-index: 1;}
+.hero { position: relative; display: flex;  background: url(../src/assets/images/bg_main_01.png) no-repeat; background-size: 200%; background-position-x: left; color: var(--primary); height: 100dvh; height: 100vh; z-index: 1;}
 
-.line-container {margin-bottom: 0.5em; /* 줄 간격 조정 */}
+.line-container {margin-bottom: 0.5em; /* 줄 간격 조정 */ }
 .hero_text {display: flex; flex-direction: column;  align-self: flex-end; text-align: left; margin-bottom: 1.5rem;  font-family: var(--font-mont); letter-spacing: -0.075rem; gap: 1.75rem;}
 .hero_text .name { position: relative; font-weight: 500; text-transform: uppercase ; }
 .hero_text .name::after {content: '';position: absolute; left: 0; bottom: -0.85rem;  width: 52px; height: 2px; background-color: var(--primary); }
@@ -105,7 +105,7 @@ body {  position: relative; font-family: "Pretendard", sans-serif; scroll-behavi
 .workcard_box .grid_work {align-items: stretch; }
 .inner-scroll { padding-bottom: 30px; box-sizing: border-box; -webkit-overflow-scrolling: touch; will-change: transform}
 .inner-scroll::-webkit-scrollbar {  display: none;}
-.content {min-height:100vh ;}
+.content {min-height:100dvh ;min-height:100vh ;}
 /* .workcard_box {  margin-top: var(--box-margin-top);} */
 
 .workcard {height: 100%; min-height: 400px; transition: all .2s ease-in; overflow: hidden; will-change: transform; cursor:pointer; }
@@ -258,6 +258,9 @@ body {  position: relative; font-family: "Pretendard", sans-serif; scroll-behavi
 
 
 /*=== MEDIAQUERY ===*/
+
+
+
 @media (min-width: 375px) {
   .section {margin-top: var(--section_mt-sm);}
   .box_title { font-size: 2.5rem;}
@@ -275,6 +278,7 @@ body {  position: relative; font-family: "Pretendard", sans-serif; scroll-behavi
   .footer::after {opacity: 0;}
 
 }
+
 
 @media (min-width: 768px) {
   .section {margin-top: var(--section_mt-md);}
@@ -300,6 +304,15 @@ body {  position: relative; font-family: "Pretendard", sans-serif; scroll-behavi
   .footer .circle_box {right: 80px; top: 120px;}
   .footer::after { left: 0; top: 60px; opacity: 1;}
 }
+
+
+@media (orientation: landscape) and (max-width: 992px) {
+    .hero { background: url(../src/assets/images/bg_main_01.png) right top no-repeat; background-size: 70%; z-index: 1;}
+
+    .hero_text .hero_title { font-size: 10dvw; text-wrap:wrap; }
+    .sidemenu {font-size: 2rem;}
+}
+
 
 @media (min-width: 992px) {
   .section {margin-top: var(--section_mt-lg);}
