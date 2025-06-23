@@ -165,7 +165,7 @@ body {  position: relative; font-family: "Pretendard", sans-serif; scroll-behavi
 
 
 /*=== ABOUT ===*/
-.about_box { border-top: 1px solid var(--primary); }
+.about_box { border-top: 1px solid var(--primary); padding-top: var(--section_mt-md);}
 .about_box .about_p{ color: var(--primary);}
 
 
