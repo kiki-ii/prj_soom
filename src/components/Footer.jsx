@@ -1,17 +1,12 @@
 // import { Text } from '@chakra-ui/react'
 // import React, { useEffect } from 'react'
-import { CircleText } from './CircleText';
+import { useBreakpointValue } from '@chakra-ui/react';
+import { CircleText } from './ui/CircleText';
 
 
 
 export const Footer = () => {
-  // useEffect(() => {
-  
-  // const text = document.querySelector(".text > p");
-  // text.innerHTML = text.innerText.split("").map(
-  //     (char, i) => `<span style="transform:rotate(${i * 8.8}deg)">${char}</span>`
-  //   ).join("");
-  //   },[])
+  const radius = useBreakpointValue({ base: 60, md: 80, lg: 100 });
   
   return (
     <footer h={'580px'} className='footer'>
@@ -21,7 +16,7 @@ export const Footer = () => {
             <p>Copyright © Lee Soomin • </p>
           </div>
         </div> */}
-        <CircleText text='Copyright©Lee Soomin•' radius='80' />
+        <CircleText text='Copyright©Lee Soomin•' radius={radius} />
         
       </div>
         <p className='txt_big'>Less, but Better</p>

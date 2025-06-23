@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useWorkStore } from '../store/work.js';
 
 
-function CreatePage() {
+export const CreatePage = () => {
   const [file, setFile] = useState(null);
   const [formData, setFormData] = useState({
     title: '',
@@ -184,4 +184,3 @@ function CreatePage() {
   );
 }
 
-export default CreatePage

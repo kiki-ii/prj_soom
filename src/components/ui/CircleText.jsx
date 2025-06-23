@@ -2,6 +2,8 @@ import { Box, Text } from '@chakra-ui/react';
 
 export const CircleText = ({ text, radius}) => {
   const characters = text.split('');
+  
+  
   return (
     <Box
       position="relative" 

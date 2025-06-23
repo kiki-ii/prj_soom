@@ -5,6 +5,7 @@ import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { useGSAP } from '@gsap/react';
 import { HomePage } from '../pages/HomePage';
 import { WorkPage } from '../pages/WorkPage';
+import { CreatePage } from '../pages/CreatePage';
 
 
 gsap.registerPlugin(ScrollSmoother, useGSAP);
@@ -25,7 +26,7 @@ export default function Router() {
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/work' element={<WorkPage />} />
-          {/* <Route path='/create' element={<CreatePage />} /> */}
+          <Route path='/create' element={<CreatePage />} />
         </Routes>
       </div>
     </div>

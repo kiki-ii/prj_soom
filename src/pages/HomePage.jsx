@@ -14,7 +14,7 @@ import { gsap } from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import faq from '../store/faq.js';
-import { Tags } from '../components/Tags.jsx';
+import { Tags } from '../components/ui/Tags.jsx';
 import { Footer } from '../components/Footer.jsx';
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
@@ -31,7 +31,7 @@ export const HomePage = () => {
   
   const paddingX = { base: '1.5rem', md: ' 3rem', lg: '4rem', xl: '10rem' };
   // const marginL = { base: '-1.5rem', md: ' -3rem', lg: '-4rem', xl: '-10rem' };
-
+  
   
   useEffect(() => {
     fetchWorks();

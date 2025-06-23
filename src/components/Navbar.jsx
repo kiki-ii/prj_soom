@@ -57,7 +57,7 @@ export const Navbar = () => {
             </>
             :
             <>
-              <Link to='' >Portfolio</Link>
+              <Link to='/work' >Portfolio</Link>
               <Link to='/#skills' >Skills</Link>
               <Link to='/#services' >Services</Link>
               <Link to='/#about' >About</Link>
