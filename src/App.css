@@ -145,8 +145,8 @@ body {  position: relative; font-family: "Pretendard", sans-serif; scroll-behavi
 
 /*=== SERVICES ===*/
 .services_box { position: relative; margin-top: var(--box-margin-top);  z-index: 0; }
-.service {  padding-bottom: 1rem; gap: 1.25rem; cursor: grab; touch-action: none; width: 100%; user-select: none;  }
-.servicecard  { background-color: rgba(247,241,215,0.75); padding: 36px 0 20px 0 ;  display: flex; align-items: center ; justify-content: center; box-sizing: border-box; width: 100%; height: 100%;  backdrop-filter: blur(16px); border: none; touch-action: auto;} /*box-shadow: 0 4px 16px rgba(var(--primary_rgb),0.06); */
+.service {  padding-bottom: 1rem; gap: 1.25rem; width: 100%; }
+.servicecard  { background-color: rgba(247,241,215,0.75); padding: 36px 0 20px 0 ;  display: flex; align-items: center ; justify-content: center; box-sizing: border-box; width: 100%; height: 100%;  backdrop-filter: blur(16px); border: none;} /*box-shadow: 0 4px 16px rgba(var(--primary_rgb),0.06); */
 .servicecard img {width: 60px;}
 .servicecard h3 { font-size: 1.125rem; text-align: center; color: var(--primary);}
 .servicecard p {font-size: 1rem; display: none; color: var(--primary); max-width: 360px;}
