@@ -1,7 +1,6 @@
 import { Box, Theme} from '@chakra-ui/react'
 import { ColorModeProvider, LightMode } from './components/ui/color-mode'
 import { Navbar } from './components/Navbar'
-import { Footer } from './components/Footer'
 
 import Router from './router';
 import gsap from 'gsap';
