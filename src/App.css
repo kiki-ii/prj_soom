@@ -40,9 +40,9 @@ body {  position: relative; font-family: 'Pretendard Variable',Pretendard,-apple
 .container::before {content: ''; position: absolute;  background:url(../src/assets/images/bg_main_03.png) no-repeat; background-size: cover; z-index: -1; }
 
 .gnb {  position: absolute;  left: 0;  top: 0;  z-index: 99;  width: 100%;  padding:var(--box-padding); color: var(--primary); }
-.gnb .logo { background: url(./assets/images/logo_soom.svg) 0 0 no-repeat ; background-size: contain;}
+.logo { background: url(./assets/images/logo_soom.svg) 0 0 no-repeat ; background-size: contain;}
 .blind {position: absolute; clip: rect(0 0 0 0); width: 1px; height: 1px; margin: -1px; overflow: hidden;}
-.gnb .nav_item { font-size: 1.25rem; font-family: var(--font-mont); font-weight: 600;}
+.nav_item { font-size: 1.25rem; font-family: var(--font-mont); font-weight: 600;}
 .btn_top {position: fixed; right: 3%; bottom: -10%; display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; border: 1px solid #c7c7c7; z-index: 1000;
   transition: bottom 0.5s var(--bounce); border-color: var(--primary); backdrop-filter: blur(4px); border-radius: 50%; color: var(--primary); transition: all 0.2s;}
 .btn_top:hover {background-color: rgba(var(--primary_rgb),1);color: #fff; border-color: #fff;}
@@ -63,12 +63,12 @@ body {  position: relative; font-family: 'Pretendard Variable',Pretendard,-apple
 
 .line-container {margin-bottom: 0.5em; /* 줄 간격 조정 */ }
 .hero_text {display: flex; flex-direction: column;  align-self: flex-end; text-align: left; margin-bottom: 1.5rem;  font-family: var(--font-mont); letter-spacing: -0.075rem; gap: 1.75rem;}
-.hero_text .name { position: relative; font-weight: 500; text-transform: uppercase ; }
-.hero_text .name::after {content: '';position: absolute; left: 0; bottom: -0.85rem;  width: 52px; height: 2px; background-color: var(--primary); }
+.hero_text_name { position: relative; font-weight: 500; text-transform: uppercase ; }
+.hero_text_name::after {content: '';position: absolute; left: 0; bottom: -0.85rem;  width: 52px; height: 2px; background-color: var(--primary); }
 
-.hero_text .hero_title { 
+.hero_title { 
   will-change: font-weight;
-  font-size: 15dvw;
+  font-size: 16dvw;
 	text-decoration: none;
 	font-weight: 700;
   line-height: 100%;
@@ -95,7 +95,7 @@ body {  position: relative; font-family: 'Pretendard Variable',Pretendard,-apple
 
 /*=== PORTFOLIO ===*/
 .workcard_box { box-sizing: border-box; }
-.workcard_box .grid_work {align-items: stretch; }
+.grid_work {align-items: stretch; }
 .inner-scroll { padding-bottom: 30px; box-sizing: border-box; -webkit-overflow-scrolling: touch; will-change: transform}
 .inner-scroll::-webkit-scrollbar {  display: none;}
 .content {min-height:100dvh ;min-height:100vh ;}
@@ -125,11 +125,11 @@ body {  position: relative; font-family: 'Pretendard Variable',Pretendard,-apple
 /*=== SKILLS ===*/
 .skills_box { width: 100%;  display: flex; justify-content: center; flex-direction: column; position: relative; z-index: 0; overflow:visible;}
 
-.skills_box .skills_cat_box { background-color: rgba(229, 227, 239, 0.6); padding: 36px 40px; color: var(--primary); backdrop-filter: blur(16px); }
-.skills_box .skills_cat_box .skill_item {display: flex; flex-direction: column; align-items: center; gap: 6px;}
-.skills_box .skills_cat_box .skill_item > img {width: 56px;}
-.skills_box .skills_cat_box h4 { font-size: 1.25rem; font-weight: 600; margin-bottom: 1.5rem; text-transform: uppercase;}
-.skills_box .skills_cat_box p { font-size: 1rem; font-weight: 500;}
+.skills_cat_box { background-color: rgba(229, 227, 239, 0.6); padding: 36px 40px; color: var(--primary); backdrop-filter: blur(16px); }
+.skills_cat_box .skill_item {display: flex; flex-direction: column; align-items: center; gap: 6px;}
+.skills_cat_box .skill_item > img {width: 56px;}
+.skills_cat_box h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 1.5rem; text-transform: uppercase;}
+.skills_cat_box p { font-size: 1rem; font-weight: 500;}
 
 
 /*=== CATCHPHRASE ===*/
@@ -146,7 +146,6 @@ body {  position: relative; font-family: 'Pretendard Variable',Pretendard,-apple
 .servicecard p {font-size: 1rem; display: none; color: var(--primary); max-width: 360px;}
 
 .service::-webkit-scrollbar {background-color: transparent; height: 4px; width: 4px;  }
-/* .service::-webkit-scrollbar:horizontal { height: 6px; } */
 .service::-webkit-scrollbar-thumb { background-color: rgba(0 , 0, 0,0); transition: all 0.3s; }
 .service:hover::-webkit-scrollbar {height: 4px;  width: 4px;}
 .service:hover::-webkit-scrollbar-thumb { background-color: rgba(53, 10, 34, 0.3); border-radius: 5px;} 
@@ -160,22 +159,22 @@ body {  position: relative; font-family: 'Pretendard Variable',Pretendard,-apple
 
 /*=== ABOUT ===*/
 .about_box { border-top: 1px solid var(--primary); padding-top: var(--section_mt-md);}
-.about_box .about_p{ color: var(--primary);}
+.about_p{ color: var(--primary);}
 
 
 
 /* === FAQ === */
-.faq_box .faq_trigger {font-weight: 500; font-size: 1.25rem; line-height: 1.5; color: var(--primary); padding: 28px 0px 28px 0; }
+.faq_trigger {font-weight: 500; font-size: 1.25rem; line-height: 1.5; color: var(--primary); padding: 28px 0px 28px 0; }
 
-.faq_box .faq_trigger > p {padding-right: 24px;}
-.faq_box .faq_trigger > div[data-state] > svg {display: none;}
-.faq_box .faq_trigger > div[data-state] {rotate: 0deg; position: relative;}
-.faq_box .faq_trigger > div[data-state]::after {content: ''; position: absolute; background-repeat: no-repeat;  background-position: center left; background-size: contain; width: 24px; height: 24px; right: 0; top: 50%; transform: translateY(-50%);}
-.faq_box .faq_trigger > div[data-state="closed"]::after {background-image: url(../src/assets/images/icon_plus.svg); }
-.faq_box .faq_trigger > div[data-state="open"]::after {background-image: url(../src/assets/images/icon_minus.svg); }
+.faq_trigger > p {padding-right: 24px;}
+.faq_trigger > div[data-state] > svg {display: none;}
+.faq_trigger > div[data-state] {rotate: 0deg; position: relative;}
+.faq_trigger > div[data-state]::after {content: ''; position: absolute; background-repeat: no-repeat;  background-position: center left; background-size: contain; width: 24px; height: 24px; right: 0; top: 50%; transform: translateY(-50%);}
+.faq_trigger > div[data-state="closed"]::after {background-image: url(../src/assets/images/icon_plus.svg); }
+.faq_trigger > div[data-state="open"]::after {background-image: url(../src/assets/images/icon_minus.svg); }
 
-.faq_box .faq_cont {position: relative; font-size: 1rem; line-height: 1.6; color: rgba(var(--primary_rgb),0.9); padding: 0 32px; padding-right: 16px; margin-bottom: 1.5rem;}
-.faq_box .faq_cont::after {content: ''; position: absolute; left: 0; top: 0; width: 4px; height: 100%; background-color: var(--primary); }
+.faq_cont {position: relative; font-size: 1rem; line-height: 1.6; color: rgba(var(--primary_rgb),0.9); padding: 0 32px; padding-right: 16px; margin-bottom: 1.5rem;}
+.faq_cont::after {content: ''; position: absolute; left: 0; top: 0; width: 4px; height: 100%; background-color: var(--primary); }
 
 
 
@@ -201,11 +200,11 @@ body {  position: relative; font-family: 'Pretendard Variable',Pretendard,-apple
 /* === FOOTER === */
 .footer {position: relative; width: 100%; height:150px; display:flex; flex-direction: column; justify-content: end; align-items: center;color: var(--primary); z-index: 0; overflow: hidden;}
 .footer::after {content: ''; position: absolute; width: 100%; height:100%; background: url(../src/assets/images/bg_main_04.png) top center no-repeat ; background-size: cover; z-index: -1; opacity: 0;}
-.footer .circle_box {position: absolute; width: 100px; height: auto; right: 50px; top: 50px; }
-.footer .circle_box div {transform-origin: center; animation: rotateText 15s linear infinite; }
-.footer .circle_box .circle_text {position: absolute; left: 50%; top: 50%; transform-origin: center; font-size: 0.875rem;text-transform: uppercase;}
+.circle_box {position: absolute; width: 100px; height: auto; right: 50px; top: 50px; }
+.circle_box div {transform-origin: center; animation: rotateText 15s linear infinite; }
+.circle_box .circle_text {position: absolute; left: 50%; top: 50%; transform-origin: center; font-size: 0.875rem;text-transform: uppercase;}
 
-.footer .txt_big {font-family: var(--font-mont); font-size: calc(1rem + 7dvw); line-height: 80%; font-weight: 700; letter-spacing: -2px;}
+.txt_big {font-family: var(--font-mont); font-size: calc(1rem + 7dvw); line-height: 80%; font-weight: 700; letter-spacing: -2px;}
 
 
 @keyframes rotateText {
@@ -222,14 +221,7 @@ body {  position: relative; font-family: 'Pretendard Variable',Pretendard,-apple
 
 
 
-
-
-
-
-
-
 /*=== MEDIAQUERY ===*/
-
 
 
 @media (min-width: 375px) {
@@ -242,8 +234,8 @@ body {  position: relative; font-family: 'Pretendard Variable',Pretendard,-apple
   .section_title h2 {margin-bottom: var(--title-mb-sm);}
   .hero {background-size: 160%; background-position-x: left;}
   .hero_text {gap: 1.75rem;}
-  .hero_text .name::after { width: 10%; bottom: -0.825rem;}
-  .hero_text .hero_title { font-size: 15dvw; text-wrap:wrap; }
+  .hero_text_name::after { width: 10%; bottom: -0.825rem;}
+  .hero_title { font-size: 15dvw; text-wrap:wrap; }
 
   .catchphrase {font-size: 3rem; text-wrap: wrap;}
   .catchphrase::after {display: none;}
@@ -262,8 +254,8 @@ body {  position: relative; font-family: 'Pretendard Variable',Pretendard,-apple
   .section_title p {font-size: 1.25rem;}
 
   .hero {background-size: 110%; background-position-x: left;}
-  .hero_text .name::after { width: 52px;}
-  .hero_text .hero_title { font-size:5.5rem; }
+  .hero_text_name::after { width: 52px;}
+  .hero_title { font-size:5.5rem; }
 
   .workcard .workcard_body {padding: 2.25rem;}
   .workcard h3 {font-size: 1.5rem; }
@@ -274,8 +266,8 @@ body {  position: relative; font-family: 'Pretendard Variable',Pretendard,-apple
 
   :root {--radius: 12vmin; }
   .footer {height: 300px;}
-  .footer .txt_big {font-size: calc(1rem + 10dvw); }
-  .footer .circle_box {right: 80px; top: 120px;}
+  .txt_big {font-size: calc(1rem + 10dvw); }
+  .circle_box {right: 80px; top: 120px;}
   .footer::after { left: 0; top: 60px; opacity: 1;}
 }
 
@@ -284,7 +276,7 @@ body {  position: relative; font-family: 'Pretendard Variable',Pretendard,-apple
     .hero { background: url(../src/assets/images/bg_main_01.png) right top no-repeat; background-size: 70%; z-index: 1;}
     .btn_top {bottom: -20%; }
 
-    .hero_text .hero_title { font-size: 10dvw; text-wrap:wrap; }
+    .hero_title { font-size: 10dvw; text-wrap:wrap; }
     .sidemenu {font-size: 2rem;}
 }
 
@@ -298,11 +290,10 @@ body {  position: relative; font-family: 'Pretendard Variable',Pretendard,-apple
   .section_title h2 {font-size: 4.25rem;  margin-bottom: var(--title-mb-lg);}
   .section_title p {font-size: 1.875rem;}
   .hero {background-size: 80%; background-position-x: right;}
-  .hero_text .hero_title { font-size:6.5rem;  }
+  .hero_title { font-size:6.5rem;  }
   .workcard h3 {font-size: 1.75rem; }
 
   .catchphrase::after {display: block;}
-  /* .about_box .about_p {font-size: 1.1875rem;} */
   
   .grid_work .workcard:nth-child(1) {grid-column: 1 / 8;  grid-row: 1 ;}
   .grid_work .workcard:nth-child(2) {grid-column: 8 / 13;  grid-row: 1;}
@@ -313,13 +304,13 @@ body {  position: relative; font-family: 'Pretendard Variable',Pretendard,-apple
   .service .servicecard:nth-child(1) {grid-column: 1 / 3; grid-row: 1;}
   .service .servicecard:nth-child(2) {grid-column: 2 / 4; grid-row: 2;}
 
-  .faq_box .faq_trigger {font-size: 1.5rem; }
-  .faq_box .faq_cont {font-size: 1.125rem; padding: 0 48px;}
-  .faq_box .faq_trigger > div[data-state]::after {width: 28px; height: 28px;}
+  .faq_trigger {font-size: 1.5rem; }
+  .faq_cont {font-size: 1.125rem; padding: 0 48px;}
+  .faq_trigger > div[data-state]::after {width: 28px; height: 28px;}
 
   .footer {height: 400px;}
-  .footer .circle_box {right: 80px; top: 160px;}
-  .footer .circle_box .circle_text {font-size: 1rem;}
+  .circle_box {right: 80px; top: 160px;}
+  .circle_box .circle_text {font-size: 1rem;}
 
 }
 
@@ -331,22 +322,20 @@ body {  position: relative; font-family: 'Pretendard Variable',Pretendard,-apple
 
   .section_title h2 { margin-bottom: var(--title-mb-xl);}
   .box_title { font-size: 6rem;}
-  .hero_text .hero_title { font-size:8rem; }
+  .hero_title { font-size:8rem; }
   .catchphrase {font-size: 6rem;}
   .servicecard p {display: inline; text-align: center;}
   .services_box .service .servicecard {padding: 52px 20px 20px 20px ;}
   .services_box .service .servicecard img {margin-bottom: 16px;}
-  /* .service .servicecard:nth-child(1) {grid-column: 1 / 3; grid-row: 1;}
-  .service .servicecard:nth-child(2) {grid-column: 3 / 5; grid-row: 2;} */
 
 
   .skills_box .skills_cat_box { padding: 44px 48px; }
   .skills_box .skills_cat_box .skill_item { gap: 12px;}
-  .skills_box .skills_cat_box h4 { font-size: 1.5rem;}
+  .skills_box .skills_cat_box h3 { font-size: 1.5rem;}
   .skills_box .skills_cat_box p { font-size: 1.1875rem;}
 
   .footer {height: 500px;}
-  .footer .circle_box {right: 80px; top: 300px;}
+  .circle_box {right: 80px; top: 300px;}
   .footer::after { left: 0; top: 120px; opacity: 0.8;}
 }
 
@@ -354,32 +343,30 @@ body {  position: relative; font-family: 'Pretendard Variable',Pretendard,-apple
   .container::after {right: -300px; top: 2700px; width: 737px; height:702px;}
   .container::before {left: -300px; top: 3900px; width: 1000px; height:1000px;}
 
-  .hero_text .hero_title { font-size:9.5rem;  }
+  .hero_title { font-size:9.5rem;  }
 
   .servicecard {min-height: 330px;}
 
-  /* .service .servicecard:nth-child(1) {grid-column: 1 / 3; grid-row: 1;}
-  .service .servicecard:nth-child(2) {grid-column: 3 / 5; grid-row: 2;} */
 
   .skills_box .skills_cat_box { padding: 44px 48px; }
   .skills_box .skills_cat_box .skill_item {flex-direction: row;}
-  .skills_box .skills_cat_box h4 {margin-bottom: 2.25rem}
+  .skills_box .skills_cat_box h3 {margin-bottom: 2.25rem}
 
-  .faq_box .faq_trigger {font-size: 2rem; }
-  .faq_box .faq_cont {font-size: 1.25rem;}
+  .faq_trigger {font-size: 2rem; }
+  .faq_cont {font-size: 1.25rem;}
 
 
 
   .footer {height: 600px;}
-  .footer .txt_big {font-size: calc(1rem + 11dvw); } 
-  .footer .circle_box {right: 120px; top: 330px;}
+  .txt_big {font-size: calc(1rem + 11dvw); } 
+  .circle_box {right: 120px; top: 330px;}
   .footer::after { left: 0; top: 100px; opacity: 0.8;}
 
 }
 
 @media (min-width: 1920px) {
-  .hero_text .hero_title { font-size:10.25rem;  }  
-  .hero_text .name { font-size:2.75rem;  }  
+  .hero_title { font-size:10.25rem;  }  
+  .hero_text_name { font-size:2.75rem;  }  
 }
 
 @keyframes blinker {

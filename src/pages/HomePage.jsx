@@ -102,7 +102,7 @@ useEffect(() => {
       {/* HERO section */}
       <Box ref={addToRefs} className='hero' height={windowHeight} padding={{ base: '0rem 1.5rem', xl:'1.75rem 5rem', lg: '1rem 3rem', md: '0rem 3rem'}}>
         <Box className='hero_text' zIndex={'1'} >
-          <Text className='name' fontSize={{base:'xl', md:'2xl', lg:'3xl', xl:'3xl'}} >
+          <Text className='hero_text_name' fontSize={{base:'xl', md:'2xl', lg:'3xl', xl:'3xl'}} >
             Lee soo min
           </Text>
           <Box>
@@ -146,7 +146,7 @@ useEffect(() => {
         
         <Grid templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }} gap={1}>
           <Box  className='skills_cat_box'>
-            <h4>Development</h4>
+            <h3>Development</h3>
             <Grid templateColumns={'repeat(2, 1fr)'} gap={'3'}>
               <Box className='skill_item' >
                 <Image src={getImageUrl('icon_html.svg')} alt='html' />
@@ -172,7 +172,7 @@ useEffect(() => {
             </Grid>
           </Box>
           <Box className='skills_cat_box'>
-            <h4>Design</h4>
+            <h3>Design</h3>
             <Grid templateColumns={'repeat(2, 1fr)'} gap={'3'}>
               <Box className='skill_item' >
                 <Image src={getImageUrl('icon_figma.svg')} alt='figma' />
@@ -194,7 +194,7 @@ useEffect(() => {
             </Grid>
           </Box>
           <Box className='skills_cat_box'>
-            <h4>Tools</h4>
+            <h3>Tools</h3>
             <Grid templateColumns={'repeat(2, 1fr)'} gap={'3'}>
               <Box className='skill_item' >
                 <Image src={getImageUrl('icon_vscode.svg')} alt='vscode' />
