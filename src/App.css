@@ -325,7 +325,7 @@ body {  position: relative; font-family: 'Pretendard Variable',Pretendard,-apple
 
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1200px) and (max-width: 1920px) {
   .section {margin-top: var(--section_mt-xl);}
   .about_box {padding-top: var(--section_mt-xl);}
   .container::after {right: -300px; top: 2600px; width: 737px; height:702px;}
@@ -386,9 +386,11 @@ body {  position: relative; font-family: 'Pretendard Variable',Pretendard,-apple
   .hero_text_name { font-size:2.75rem;  }  
 
 
-  .grid_work .workcard:nth-child(even) {grid-column: span 3; }
-  .grid_work .workcard:nth-child(odd)  {grid-column: span 4; }
-  .grid_work .workcard:nth-child(5n)  {grid-column: span 5; }
+  .grid_work .workcard  {grid-column: span 3; min-height: 600px;}
+  /* .grid_work .workcard:nth-child(3n) {grid-column: span 4; } */
+  .grid_work .workcard:nth-child(1),
+  .grid_work .workcard:nth-child(5),
+  .grid_work .workcard:nth-child(9) {grid-column: span 6; }
 }
 
 @keyframes blinker {
