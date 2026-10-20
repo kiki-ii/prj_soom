@@ -11,7 +11,7 @@ export const WorkPopup = ({work }) => {
 
   return (
     <Dialog.Root
-      size='full'
+      size='full' placement='top'
       motionPreset='slide-in-bottom'
       scrollBehavior='outside'
       open={open}
@@ -28,7 +28,8 @@ export const WorkPopup = ({work }) => {
               <Dialog.Title>With Outside Scroll</Dialog.Title>
             </Dialog.Header> */}
             <Dialog.CloseTrigger asChild>
-              <CloseButton size={{base:'md', lg: 'xl'}} position='fixed' right='1rem' className='btn_dialog_close' />
+              {/* <CloseButton size={{base:'md'}} position='fixed' right='1rem' className='btn_dialog_close' /> */}
+              <CloseButton size={{base:'md'}} variant='outline' className='btn_dialog_close' />
             </Dialog.CloseTrigger>
             <Dialog.Body>
               <Box onContextMenu={(e)=> e.preventDefault()} onDragStart={(e)=>e.preventDefault()} display='flex' alignItems='center' flexDirection='column'>
@@ -36,7 +37,7 @@ export const WorkPopup = ({work }) => {
                   <Image src={getImageUrl(img)} key={index} />
                 ))}
               </Box>
-            </Dialog.Body>
+            </Dialog.Body>        
           </Dialog.Content>
         </Dialog.Positioner>
       </Portal>

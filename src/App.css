@@ -95,7 +95,7 @@ body {  position: relative; font-family: 'Pretendard Variable',Pretendard,-apple
 
 /*=== PORTFOLIO ===*/
 .workcard_box { box-sizing: border-box; }
-.grid_work {align-items: stretch; }
+.grid_work {align-items: stretch; display: grid; }
 .inner-scroll { padding-bottom: 30px; box-sizing: border-box; -webkit-overflow-scrolling: touch; will-change: transform}
 .inner-scroll::-webkit-scrollbar {  display: none;}
 .content {min-height:100dvh ;min-height:100vh ;}
@@ -294,15 +294,26 @@ body {  position: relative; font-family: 'Pretendard Variable',Pretendard,-apple
   .workcard h3 {font-size: 1.75rem; }
 
   .catchphrase::after {display: block;}
-  
-  .grid_work .workcard:nth-child(1) {grid-column: 1 / 8;  grid-row: 1 ;}
+
+  .grid_work .workcard {grid-column: span 6;   }
+
+
+
+
+  .services_box .service .servicecard h3 { font-size: 1.75rem;}  
+  .service .servicecard {grid-column: span 1; }
+  .service .servicecard:nth-child(1),
+  .service .servicecard:nth-child(5) {grid-column: span 2;}
+  .service .servicecard:last-child {grid-column: span 1;}
+
+  /* .grid_work .workcard:nth-child(1) {grid-column: 1 / 8;  grid-row: 1 ;}
   .grid_work .workcard:nth-child(2) {grid-column: 8 / 13;  grid-row: 1;}
   .grid_work .workcard:nth-child(3) {grid-column: 1 / 6;  grid-row: 2;}
   .grid_work .workcard:nth-child(4) {grid-column: 6 / 13;  grid-row: 2;}
 
   .services_box .service .servicecard h3 { font-size: 1.75rem;}  
   .service .servicecard:nth-child(1) {grid-column: 1 / 3; grid-row: 1;}
-  .service .servicecard:nth-child(2) {grid-column: 2 / 4; grid-row: 2;}
+  .service .servicecard:nth-child(2) {grid-column: 2 / 4; grid-row: 2;} */
 
   .faq_trigger {font-size: 1.5rem; }
   .faq_cont {font-size: 1.125rem; padding: 0 48px;}
@@ -324,6 +335,12 @@ body {  position: relative; font-family: 'Pretendard Variable',Pretendard,-apple
   .box_title { font-size: 6rem;}
   .hero_title { font-size:8rem; }
   .catchphrase {font-size: 6rem;}
+
+  .grid_work .workcard {grid-column: span 5; min-height: 550px;  }
+  .grid_work .workcard:nth-child(4n + 1),
+  .grid_work .workcard:nth-child(4n) {grid-column: span 7; }
+
+
   .servicecard p {display: inline; text-align: center;}
   .services_box .service .servicecard {padding: 52px 20px 20px 20px ;}
   .services_box .service .servicecard img {margin-bottom: 16px;}
@@ -367,6 +384,11 @@ body {  position: relative; font-family: 'Pretendard Variable',Pretendard,-apple
 @media (min-width: 1920px) {
   .hero_title { font-size:10.25rem;  }  
   .hero_text_name { font-size:2.75rem;  }  
+
+
+  .grid_work .workcard:nth-child(even) {grid-column: span 3; }
+  .grid_work .workcard:nth-child(odd)  {grid-column: span 4; }
+  .grid_work .workcard:nth-child(5n)  {grid-column: span 5; }
 }
 
 @keyframes blinker {
