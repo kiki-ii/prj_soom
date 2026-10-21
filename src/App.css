@@ -168,10 +168,15 @@ body {  position: relative; font-family: 'Pretendard Variable',Pretendard,-apple
 
 .faq_trigger > p {padding-right: 24px;}
 .faq_trigger > div[data-state] > svg {display: none;}
-.faq_trigger > div[data-state] {rotate: 0deg; position: relative;}
-.faq_trigger > div[data-state]::after {content: ''; position: absolute; background-repeat: no-repeat;  background-position: center left; background-size: contain; width: 24px; height: 24px; right: 0; top: 50%; transform: translateY(-50%);}
+.faq_trigger > div[data-state]  {rotate: 0deg; position: relative; display: block; width: 28px; height: 28px; }
+.faq_trigger > div[data-state]::after,
+.faq_trigger > div[data-state]::before {content: ''; display: block; position: absolute; width: 28px; height: 2px; box-sizing: border-box;  background-color:var(--primary);left:0; top: 50%; transform: translateY(-50%) rotate(0); transition:all .3s;}
+.faq_trigger > div[data-state]::after { top: 47%;}
+.faq_trigger > div[data-state="closed"]::after { transform: rotate(-90deg); opacity: 1;   }
+.faq_trigger > div[data-state="open"]::after { transform: rotate(0deg); opacity: 1;  }
+/* .faq_trigger > div[data-state]::after {content: ''; position: absolute; background-repeat: no-repeat;  background-position: center left; background-size: contain; width: 24px; height: 24px; right: 0; top: 50%; transform: translateY(-50%);}
 .faq_trigger > div[data-state="closed"]::after {background-image: url(../src/assets/images/icon_plus.svg); }
-.faq_trigger > div[data-state="open"]::after {background-image: url(../src/assets/images/icon_minus.svg); }
+.faq_trigger > div[data-state="open"]::after {background-image: url(../src/assets/images/icon_minus.svg); } */
 
 .faq_cont {position: relative; font-size: 1rem; line-height: 1.6; color: rgba(var(--primary_rgb),0.9); padding: 0 32px; padding-right: 16px; margin-bottom: 1.5rem;}
 .faq_cont::after {content: ''; position: absolute; left: 0; top: 0; width: 4px; height: 100%; background-color: var(--primary); }
@@ -317,7 +322,7 @@ body {  position: relative; font-family: 'Pretendard Variable',Pretendard,-apple
 
   .faq_trigger {font-size: 1.5rem; }
   .faq_cont {font-size: 1.125rem; padding: 0 48px;}
-  .faq_trigger > div[data-state]::after {width: 28px; height: 28px;}
+  /* .faq_trigger > div[data-state]::after {width: 28px; height: 28px;} */
 
   .footer {height: 400px;}
   .circle_box {right: 80px; top: 160px;}
