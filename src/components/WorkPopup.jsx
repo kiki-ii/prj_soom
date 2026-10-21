@@ -11,9 +11,9 @@ export const WorkPopup = ({work }) => {
 
   return (
     <Dialog.Root
-      size='full' placement='top'
+      size='cover' placement='top' 
       motionPreset='slide-in-bottom'
-      scrollBehavior='outside'
+       scrollBehavior='outside'
       open={open}
       onOpenChange={e => setOpen(e.open)}
     >
@@ -23,15 +23,25 @@ export const WorkPopup = ({work }) => {
       <Portal>
         <Dialog.Backdrop />
         <Dialog.Positioner>
-          <Dialog.Content>
+          <Dialog.Content w={{base: '95vw', md: 'full'}} maxW='1200px' maxH='90vh' p={{base:0, md:4}} display='flex' flexDirection='column' >
             {/* <Dialog.Header>
               <Dialog.Title>With Outside Scroll</Dialog.Title>
             </Dialog.Header> */}
-            <Dialog.CloseTrigger asChild>
+            <Dialog.CloseTrigger top="0" insetEnd={{base: 0, md:'-12'}} zIndex='100' asChild>
               {/* <CloseButton size={{base:'md'}} position='fixed' right='1rem' className='btn_dialog_close' /> */}
-              <CloseButton size={{base:'md'}} variant='outline' className='btn_dialog_close' />
+              <CloseButton size={{base:'sm', md: 'md'}} className='btn_dialog_close' />
             </Dialog.CloseTrigger>
-            <Dialog.Body>
+            <Dialog.Body p={4} overflowY='auto' flex='1' display='flex' justifyContent='center' alignItems='start' // 👇 스크롤은 되지만 스크롤바를 보이지 않게 숨기는 CSS 설정
+            css={{
+              // 파이어폭스
+              scrollbarWidth: "none",
+              // IE, 엣지 레거시
+              msOverflowStyle: "none",
+              // 크롬, 사파리, 오페라 등 웹킷 브라우저
+              "&::-webkit-scrollbar": {
+                display: "none",
+              },
+            }} >
               <Box onContextMenu={(e)=> e.preventDefault()} onDragStart={(e)=>e.preventDefault()} display='flex' alignItems='center' flexDirection='column'>
                 {work.image.map((img, index) => (
                   <Image src={getImageUrl(img)} key={index} />

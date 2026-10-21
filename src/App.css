@@ -189,7 +189,7 @@ body {  position: relative; font-family: 'Pretendard Variable',Pretendard,-apple
 
 /*=== SIDEMENU ===*/
 .sidemenu_box {display: flex; align-items: center; justify-content: center;  }
-.sidemenu {width: 100%; height: 100%; display: flex;  align-items: center; justify-content: center; font-family: var(--font-mont); font-weight: 600; letter-spacing: -0.05rem; font-size: 3rem; line-height: 1.8; background-color: var(--body-color); color: var(--primary);}
+.sidemenu {width: 100%; height: 100%; display: flex;  align-items: center; justify-content: center; font-family: var(--font-mont); font-weight: 600; letter-spacing: -0.05rem; font-size: 2rem; line-height: 1.8; background-color: var(--body-color); color: var(--primary);}
 .sidemenu a {position: relative;}
 .sidemenu a::after {content: ''; position: absolute; left: 50%; bottom: 10%; width: 0%; height: 4px;   background-color: var(--primary); transform: translateX(-50%); transition: width 0.2s;}
 .sidemenu a:hover::after {width: 100%;}

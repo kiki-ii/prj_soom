@@ -32,7 +32,7 @@ export const SideMenu = () => {
           <Drawer.Positioner>
             <Drawer.Content>
               <Drawer.CloseTrigger asChild>
-                <CloseButton className='closebtn' size='lg' />
+                <CloseButton className='closebtn' size='md' />
               </Drawer.CloseTrigger>
               <Drawer.Body padding={'0'}>
                 <VStack className='sidemenu'>
